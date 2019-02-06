@@ -1,16 +1,14 @@
-﻿using System;
+﻿using Actions;
+using interfaces;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RegimentTest.Actions;
 
-namespace RegimentTest.Classes
+namespace Classes
 {
   public enum CharacterType
   {
     Soldier, Archer, Unique
   }
+
   public class Character
   {
     public CharacterType Type { get; set; }
@@ -32,7 +30,8 @@ namespace RegimentTest.Classes
           HitpointsMaximum = 16;
           HitpointsCurrent = HitpointsMaximum;
           Actions = new List<IAction>()
-          { new SimpleAttack() { DiceSides = 6, AttackBonus = 4, DamageBonus = 2, Name = "Spear Attack", Description = "Melee attack with a spear" } };
+        { new SimpleAttack() { DiceSides = 6, AttackBonus = 4, DamageBonus = 2, Name = "Spear Attack", Description = "Melee attack with a spear" },
+          new SimpleAttack() { DiceSides = 6, AttackBonus = 4, DamageBonus = 2, Name = "Javelin Attack", Description = "Ranged attack with a javelin" },};
           Type = type;
           break;
         case CharacterType.Archer:
@@ -43,11 +42,11 @@ namespace RegimentTest.Classes
           HitpointsMaximum = 16;
           HitpointsCurrent = HitpointsMaximum;
           Actions = new List<IAction>()
-          { new SimpleAttack() { DiceSides = 8, AttackBonus = 4, DamageBonus = 2, Name = "Longbow Attack", Description = "Ranged attack with a longbow" } };
+        { new SimpleAttack() { DiceSides = 8, AttackBonus = 4, DamageBonus = 2, Name = "Longbow Attack", Description = "Ranged attack with a longbow" } };
           Type = type;
           break;
         case CharacterType.Unique:
-          throw new Exception("Cannot create an unique character without specific data");
+        //throw new Exception("Cannot create an unique character without specific data");
         default:
           break;
       }
@@ -64,3 +63,4 @@ namespace RegimentTest.Classes
     }
   }
 }
+

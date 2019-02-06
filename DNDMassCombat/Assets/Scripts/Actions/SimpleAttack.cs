@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RegimentTest.Classes;
+﻿using Classes;
+using interfaces;
+using System;
 
-namespace RegimentTest.Actions
+namespace Actions
 {
   public class SimpleAttack : IAction
   {
@@ -18,7 +15,7 @@ namespace RegimentTest.Actions
     public void ExecuteAction(TargetObject target)
     {
       Random ran = new Random();
-      if(ran.Next(20) +1 + AttackBonus >= target.TargetCharacter.ArmorClass)
+      if (ran.Next(20) + 1 + AttackBonus >= target.TargetCharacter.ArmorClass)
       {
         target.TargetCharacter.HitpointsCurrent -= ran.Next(DiceSides) + 1 + DamageBonus;
       }
