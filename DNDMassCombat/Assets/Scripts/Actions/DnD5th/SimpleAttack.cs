@@ -1,5 +1,5 @@
-﻿using Classes;
-using interfaces;
+﻿using Assets.Scripts.Classes;
+using Assets.Scripts.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

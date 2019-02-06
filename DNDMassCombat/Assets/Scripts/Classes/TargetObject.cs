@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Classes
+namespace Assets.Scripts.Classes
 {
   public class TargetObject
   {

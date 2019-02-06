@@ -1,8 +1,8 @@
 ﻿using Actions;
-using interfaces;
+using Assets.Scripts.Interfaces;
 using System.Collections.Generic;
 
-namespace Classes
+namespace Assets.Scripts.Classes
 {
   public enum CharacterType
   {
@@ -11,6 +11,7 @@ namespace Classes
 
   public class Character
   {
+    public string Name { get; set; }
     public CharacterType Type { get; set; }
     public int ArmorClass { get; set; }
     public int Speed { get; set; }
@@ -33,6 +34,7 @@ namespace Classes
         { new SimpleAttack() { DiceSides = 6, AttackBonus = 4, DamageBonus = 2, Name = "Spear Attack", Description = "Melee attack with a spear" },
           new SimpleAttack() { DiceSides = 6, AttackBonus = 4, DamageBonus = 2, Name = "Javelin Attack", Description = "Ranged attack with a javelin" },};
           Type = type;
+          Name = type.ToString();
           break;
         case CharacterType.Archer:
           // create an archer class
@@ -44,6 +46,7 @@ namespace Classes
           Actions = new List<IAction>()
         { new SimpleAttack() { DiceSides = 8, AttackBonus = 4, DamageBonus = 2, Name = "Longbow Attack", Description = "Ranged attack with a longbow" } };
           Type = type;
+          Name = type.ToString();
           break;
         case CharacterType.Unique:
         //throw new Exception("Cannot create an unique character without specific data");
@@ -52,7 +55,7 @@ namespace Classes
       }
     }
 
-    public Character(int armorclass, int speed, int initiative, int hitpointMax)
+    public Character(int armorclass, int speed, int initiative, int hitpointMax, string name)
     {
       ArmorClass = armorclass;
       Speed = speed;
@@ -60,6 +63,7 @@ namespace Classes
       HitpointsMaximum = hitpointMax;
       HitpointsCurrent = HitpointsMaximum;
       Type = CharacterType.Unique;
+      Name = name;
     }
   }
 }

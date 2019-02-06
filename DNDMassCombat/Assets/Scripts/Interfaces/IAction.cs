@@ -1,7 +1,7 @@
 ﻿
-using Classes;
+using Assets.Scripts.Classes;
 
-namespace interfaces
+namespace Assets.Scripts.Interfaces
 {
   public interface IAction
   {

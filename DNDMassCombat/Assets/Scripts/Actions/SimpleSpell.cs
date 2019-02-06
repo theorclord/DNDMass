@@ -1,6 +1,6 @@
 ﻿
-using Classes;
-using interfaces;
+using Assets.Scripts.Classes;
+using Assets.Scripts.Interfaces;
 using System;
 
 namespace Actions
