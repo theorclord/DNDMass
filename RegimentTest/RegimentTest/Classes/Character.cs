@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RegimentTest.Actions;
 
 namespace RegimentTest.Classes
 {
@@ -17,13 +18,20 @@ namespace RegimentTest.Classes
     public int Initiative { get; set; }
     public int HitpointsMaximum { get; set; }
     public int HitpointsCurrent { get; set; }
-    List<object> Actions { get; set; } // create action 
+    public List<IAction> Actions { get; set; } // create action 
     public Character(CharacterType type)
     {
       switch (type)
       {
         case CharacterType.Soldier:
           // create a soldier class
+          ArmorClass = 16;
+          Speed = 30;
+          Initiative = 1;
+          HitpointsMaximum = 16;
+          HitpointsCurrent = HitpointsMaximum;
+          Actions = new List<IAction>()
+          { new SimpleAttack() { DiceSides = 6, AttackBonus = 4, DamageBonus = 2 } };
           break;
         case CharacterType.Archer:
           // create an archer class
