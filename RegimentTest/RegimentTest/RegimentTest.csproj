@@ -49,6 +49,7 @@
     <Compile Include="Actions\SimpleSpell.cs" />
     <Compile Include="Classes\Character.cs" />
     <Compile Include="Classes\IAction.cs" />
+    <Compile Include="Classes\Regiment.cs" />
     <Compile Include="Classes\TargetObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
